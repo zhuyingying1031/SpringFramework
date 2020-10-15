@@ -4,12 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
+   <!-- <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
 
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程"/>
 
+    </bean>-->
+
+    <bean id="video" class="net.xdclass.sp.domain.Video">
+        <constructor-arg name="title" value="⾯试专题课程第⼀季"></constructor-arg>
     </bean>
+
 
     <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder">
         <property name="id" value="8"/>
