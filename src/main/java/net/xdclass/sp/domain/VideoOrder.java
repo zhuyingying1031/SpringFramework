@@ -30,7 +30,6 @@ public class VideoOrder {
 	}
 
 	public void setVideo(Video video) {
-		System.out.println("video对象注入");
 		this.video = video;
 	}
 }

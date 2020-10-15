@@ -11,23 +11,13 @@
 
     </bean>-->
 
-    <bean id="video" class="net.xdclass.sp.domain.Video">
-      <!--  <constructor-arg name="title" value="⾯试专题课程第⼀季"></constructor-arg>-->
-            <!--list类型注入-->
-            <property name="chapterList">
-                <list>
-                    <value>第一章SpringBoot</value>
-                    <value>第二章SpringBoot</value>
-                </list>
-            </property>
-            <property name="videoMap">
-                <map>
-                    <entry key="1" value="SpringCloud课程"></entry>
-                    <entry key="2" value="Cloud课程"></entry>
-                </map>
-            </property>
-      </bean>
-
+    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
+        <property name="id" value="9"/>
+        <property name="title" value="Spring 5.X课程" />
+    </bean>
+    <bean id="video2" class="net.xdclass.sp.domain.Video2" scope="singleton" parent="video">
+        <property name="summary" value="这个是summary"></property>
+    </bean>
 
     <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder">
         <property name="id" value="8"/>

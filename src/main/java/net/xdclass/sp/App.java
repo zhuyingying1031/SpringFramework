@@ -1,6 +1,7 @@
 package net.xdclass.sp;
 
 import net.xdclass.sp.domain.Video;
+import net.xdclass.sp.domain.Video2;
 import net.xdclass.sp.domain.VideoOrder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -8,7 +9,9 @@ public class App {
 	public static void main(String [] args){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		//testscope(context);
-		test(context);
+	//	test(context);
+
+		testBean(context);
 	}
 
 	/**
@@ -45,4 +48,13 @@ public class App {
 		System.out.println("map的值"+video.getVideoMap().get(2));
 	}
 
+	/**
+	 * Bean之间的依赖和继承验证
+	 */
+
+	public static  void  testBean(ApplicationContext context) {
+		Video2 video2 = (Video2) context.getBean("video2");
+		System.out.println("Title的值"+video2.getTitle());
+		System.out.println("Summary的值"+video2.getSummary());
+	}
 }

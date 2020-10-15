@@ -3,10 +3,20 @@ package net.xdclass.sp.domain;
 import java.util.List;
 import java.util.Map;
 
-public class Video {
+public class Video2 {
 	private int id;
 
 	private String title;
+
+	private String summary;
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
 
 	private List<String> chapterList;
 
@@ -29,10 +39,10 @@ public class Video {
 		this.videoMap = videoMap;
 	}
 
-	public Video() {
+	public Video2() {
 	}
 
-	public Video(String title) {
+	public Video2(String title) {
 		this.title = title;
 	}
 
