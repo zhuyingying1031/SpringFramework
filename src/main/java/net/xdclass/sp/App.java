@@ -30,10 +30,19 @@ public class App {
 	 * 注入方式验证
 	 */
 	public static  void  test(ApplicationContext context){
-		Video video = (Video) context.getBean("video");
+		/**
+		 * 构造函数注入
+		 */
+		/*Video video = (Video) context.getBean("video");
 		VideoOrder videoOrder=(VideoOrder)context.getBean("videoOrder");
-		System.out.println(videoOrder.getVideo().getTitle());
+		System.out.println(videoOrder.getVideo().getTitle());*/
 
+		/**
+		 * List-Map类型的注入验证
+		 */
+		Video video = (Video) context.getBean("video");
+		System.out.println("list的值"+video.getChapterList().get(1));
+		System.out.println("map的值"+video.getVideoMap().get(2));
 	}
 
 }
