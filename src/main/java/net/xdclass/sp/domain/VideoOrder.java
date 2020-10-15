@@ -9,6 +9,10 @@ public class VideoOrder {
 
 	private Video video;
 
+	public VideoOrder(Video video) {
+		this.video = video;
+	}
+
 	public int getId() {
 		return id;
 	}

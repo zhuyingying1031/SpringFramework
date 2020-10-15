@@ -9,7 +9,7 @@ public class App {
 	public static void main(String [] args){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		//testscope(context);
-	    //est(context);
+	    test(context);
 
 		//testBean(context);
 		testInitAndDestroy(context);
@@ -37,16 +37,16 @@ public class App {
 		/**
 		 * 构造函数注入
 		 */
-		/*Video video = (Video) context.getBean("video");
+		Video video = (Video) context.getBean("video");
 		VideoOrder videoOrder=(VideoOrder)context.getBean("videoOrder");
-		System.out.println(videoOrder.getVideo().getTitle());*/
+		System.out.println(videoOrder.getVideo().getTitle());
 
 		/**
 		 * List-Map类型的注入验证
 		 */
-		Video2 video2 = (Video2) context.getBean("video2");
+		/*Video2 video2 = (Video2) context.getBean("video2");
 		System.out.println("list的值"+video2.getChapterList().get(1));
-		System.out.println("map的值"+video2.getVideoMap().get(2));
+		System.out.println("map的值"+video2.getVideoMap().get(2));*/
 	}
 
 	/**

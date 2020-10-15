@@ -4,15 +4,28 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton" init-method="init" destroy-method="destroy">
+    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton" >
 
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程"/>
 
     </bean>
 
-    <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor"/>
-    <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor2"/>
+
+    <!--autowire设置byName，通过bean中的属性名字字段匹配配置文件中的bean id进行字段注入-->
+   <!-- <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="byName">-->
+
+    <!--autowire设置byType，通过bean中的属性类型自动匹配配置文件中的bean进行字段注入-->
+ <!--<bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="byType">-->
+
+    <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="constructor">
+        <property name="id" value="8"/>
+        <property name="outTradeNo" value="23432fnfwedwefqwef2"/>
+    </bean>
+
+   <!-- <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor"/>
+    <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor2"/>-->
+
 
     <!--<bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
         <property name="id" value="9"/>
@@ -22,11 +35,7 @@
         <property name="summary" value="这个是summary"></property>
     </bean>
 
-    <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder">
-        <property name="id" value="8"/>
-        <property name="outTradeNo" value="23432fnfwedwefqwef2"/>
-        <property name="video" ref="video"/>
-    </bean>
+
 -->
 
 </beans>
