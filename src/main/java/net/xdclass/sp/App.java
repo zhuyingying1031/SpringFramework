@@ -12,6 +12,8 @@ public class App {
 
 	/**
 	 * 匹配内存地址来验证将bean 属性scope设置为singleton是返回是同一个对象
+	 *
+	 * 匹配内存地址来验证将bean 属性scope设置为prototype是返回不是同一个对象
 	 * @param context
 	 */
 	public static  void  testscope(ApplicationContext context){
