@@ -18,6 +18,7 @@ public class Video {
 	}
 
 	public void setTitle(String title) {
+		System.out.println("set注入");
 		this.title = title;
 	}
 }
