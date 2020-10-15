@@ -12,6 +12,8 @@
     </bean>
 
     <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor"/>
+    <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor2"/>
+
     <!--<bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程" />
