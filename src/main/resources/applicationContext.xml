@@ -4,14 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <!-- <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
+    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton" init-method="init" destroy-method="destroy">
 
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程"/>
 
-    </bean>-->
+    </bean>
 
-    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
+    <!--<bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton">
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程" />
     </bean>
@@ -24,6 +24,6 @@
         <property name="outTradeNo" value="23432fnfwedwefqwef2"/>
         <property name="video" ref="video"/>
     </bean>
-
+-->
 
 </beans>

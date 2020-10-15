@@ -8,27 +8,13 @@ public class Video {
 
 	private String title;
 
-	private List<String> chapterList;
-
-
-	private Map<Integer,String> videoMap;
-
-	public List<String> getChapterList() {
-		return chapterList;
+	public void  init(){
+		System.out.println("init");
 	}
 
-	public void setChapterList(List<String> chapterList) {
-		this.chapterList = chapterList;
+	public void  destroy(){
+		System.out.println("destroy");
 	}
-
-	public Map<Integer, String> getVideoMap() {
-		return videoMap;
-	}
-
-	public void setVideoMap(Map<Integer, String> videoMap) {
-		this.videoMap = videoMap;
-	}
-
 	public Video() {
 	}
 

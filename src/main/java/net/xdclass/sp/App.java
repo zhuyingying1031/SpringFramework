@@ -11,7 +11,8 @@ public class App {
 		//testscope(context);
 	//	test(context);
 
-		testBean(context);
+		//testBean(context);
+		testInitAndDestroy(context);
 	}
 
 	/**
@@ -43,18 +44,26 @@ public class App {
 		/**
 		 * List-Map类型的注入验证
 		 */
-		Video video = (Video) context.getBean("video");
-		System.out.println("list的值"+video.getChapterList().get(1));
-		System.out.println("map的值"+video.getVideoMap().get(2));
+		Video2 video2 = (Video2) context.getBean("video2");
+		System.out.println("list的值"+video2.getChapterList().get(1));
+		System.out.println("map的值"+video2.getVideoMap().get(2));
 	}
 
 	/**
 	 * Bean之间的依赖和继承验证
 	 */
-
 	public static  void  testBean(ApplicationContext context) {
 		Video2 video2 = (Video2) context.getBean("video2");
 		System.out.println("Title的值"+video2.getTitle());
 		System.out.println("Summary的值"+video2.getSummary());
+	}
+
+	/**
+	 * 生命周期的init和destroy方法验证
+	 */
+
+	public static  void  testInitAndDestroy(ApplicationContext context) {
+		Video video = (Video) context.getBean("video");
+		((ClassPathXmlApplicationContext) context).registerShutdownHook();
 	}
 }
