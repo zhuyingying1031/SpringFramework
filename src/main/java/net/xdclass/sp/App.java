@@ -31,7 +31,8 @@ public class App {
 	 */
 	public static  void  test(ApplicationContext context){
 		Video video = (Video) context.getBean("video");
-
+		VideoOrder videoOrder=(VideoOrder)context.getBean("videoOrder");
+		System.out.println(videoOrder.getVideo().getTitle());
 
 	}
 
