@@ -2,15 +2,18 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop">
 
-    <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton" >
+ <!--   <bean id="video" class="net.xdclass.sp.domain.Video" scope="singleton" >
 
         <property name="id" value="9"/>
         <property name="title" value="Spring 5.X课程"/>
 
     </bean>
-
+-->
 
     <!--autowire设置byName，通过bean中的属性名字字段匹配配置文件中的bean id进行字段注入-->
    <!-- <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="byName">-->
@@ -18,11 +21,11 @@
     <!--autowire设置byType，通过bean中的属性类型自动匹配配置文件中的bean进行字段注入-->
  <!--<bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="byType">-->
 
-    <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="constructor">
+ <!--   <bean id="videoOrder" class="net.xdclass.sp.domain.VideoOrder" autowire="constructor">
         <property name="id" value="8"/>
         <property name="outTradeNo" value="23432fnfwedwefqwef2"/>
     </bean>
-
+-->
    <!-- <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor"/>
     <bean class="net.xdclass.sp.processor.CustomBeanPostProcessor2"/>-->
 
@@ -37,5 +40,21 @@
 
 
 -->
+
+
+    <bean id="timeHandler" class="net.xdclass.sp.aop.TimeHandler"/>
+    <bean id="videoService" class="net.xdclass.sp.service.VideoServiceImpl"/>
+    <!--aop配置-->
+    <aop:config>
+        <!--横切关注点-->
+        <aop:aspect id="timeAspect" ref="timeHandler">
+            <!--定义切入点表达式-->
+            <!--<aop:pointcut id="allMethodLogPointCut" expression="execution(* net.xdclass.sp.service.VideoService.sav*(..))"/>-->
+            <aop:pointcut id="allMethodLogPointCut" expression="execution(* net.xdclass.sp.service.VideoService.*(..))"/>
+            <!--配置前置通知和后置通知-->
+            <aop:before method="printBefore" pointcut-ref="allMethodLogPointCut"/>
+            <aop:after method="printAfter" pointcut-ref="allMethodLogPointCut"/>
+        </aop:aspect>
+    </aop:config>
 
 </beans>
