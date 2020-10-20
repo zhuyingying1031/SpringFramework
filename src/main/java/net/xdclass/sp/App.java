@@ -14,9 +14,12 @@ public class App {
 		context.scan("net.xdclass");
 		//里面完成初始化操作，核心方法
 		context.refresh();
-		VideoService videoService = (VideoService) context.getBean("videoService");
+		/*VideoService videoService = (VideoService) context.getBean("videoService");
 		videoService.findById(2);
 		Video video = (Video) context.getBean("video");
-		video.init();
+		video.init();*/
+
+		VideoOrder videoOrder=(VideoOrder) context.getBean("videoOrderName");
+
 	}
 }

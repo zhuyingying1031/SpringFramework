@@ -9,6 +9,9 @@ public class VideoOrder {
 
 	private Video video;
 
+	public VideoOrder(){
+		System.out.println("VideoOrder空构造函数被调用");
+	}
 	public VideoOrder(Video video) {
 		this.video = video;
 	}
@@ -36,4 +39,12 @@ public class VideoOrder {
 	public void setVideo(Video video) {
 		this.video = video;
 	}
+	public void init(){
+		System.out.println("VideoOrder init 方法被调用");
+	}
+
+	public void  destroy(){
+		System.out.println("VideoOrder destroy 方法被调用");
+	}
+
 }
