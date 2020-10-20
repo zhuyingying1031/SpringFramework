@@ -1,7 +1,9 @@
 package net.xdclass.sp.service;
 
 import net.xdclass.sp.domain.Video;
+import org.springframework.stereotype.Component;
 
+@Component("videoService")
 public class VideoServiceImpl  implements VideoService {
 	public int save(Video video) {
 		System.out.println("保存video");
