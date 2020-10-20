@@ -1,5 +1,8 @@
 package net.xdclass.sp.domain;
 
+import net.xdclass.sp.config.CustomConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class VideoOrder {
 
 	private int id;
@@ -9,8 +12,11 @@ public class VideoOrder {
 
 	private Video video;
 
+
+
 	public VideoOrder(){
 		System.out.println("VideoOrder空构造函数被调用");
+
 	}
 	public VideoOrder(Video video) {
 		this.video = video;
